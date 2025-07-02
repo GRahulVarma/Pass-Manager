@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Password Manager</h1>
+
+        <div id="auth-section" class="card">
+            <h2>Master Password</h2>
+            <div class="form-group">
+                <label for="masterPasswordInput">Enter Master Password:</label>
+                <input type="password" id="masterPasswordInput" placeholder="Your Master Password">
+            </div>
+            <div class="button-group">
+                <button id="setMasterPasswordBtn">Set Master Password</button>
+                <button id="verifyMasterPasswordBtn">Verify Master Password</button>
+            </div>
+            <p id="authMessage" class="message"></p>
+        </div>
+
+        <div id="manager-section" class="card hidden">
+            <h2>Manage Passwords</h2>
+            <div class="form-group">
+                <label for="serviceNameInput">Service Name:</label>
+                <input type="text" id="serviceNameInput" placeholder="e.g., Google, Facebook">
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Password:</label>
+                <input type="password" id="passwordInput" placeholder="Your password">
+            </div>
+            <button id="addUpdatePasswordBtn">Add / Update Password</button>
+            <p id="managerMessage" class="message"></p>
+
+            <h3>Stored Passwords:</h3>
+            <ul id="passwordList">
+                </ul>
+            <button id="copyPasswordBtn" class="action-btn" disabled>Copy Decrypted Selected</button>
+            <button id="deletePasswordBtn" class="action-btn" disabled>Delete Selected</button>
+            <p id="decryptedOutput" class="message"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
